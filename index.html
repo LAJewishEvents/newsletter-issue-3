@@ -576,7 +576,54 @@ section, .section, .card, .container {
   .btns{ display:flex; flex-wrap:wrap; gap:10px; }
   .btn{ width:auto; }
 }
-</style></head>
+</style>
+
+<style id="compact-elf-widget-fix">
+.elfsight-app-cfab7fc8-bb34-45e0-a094-e14966c3df35{min-height:280px !important;}
+.section .card .elfsight-app-cfab7fc8-bb34-45e0-a094-e14966c3df35{max-height:320px !important;overflow:hidden !important;display:block;}
+@media (max-width: 640px){
+  .elfsight-app-cfab7fc8-bb34-45e0-a094-e14966c3df35{min-height:230px !important;}
+  .section .card .elfsight-app-cfab7fc8-bb34-45e0-a094-e14966c3df35{max-height:270px !important;}
+}
+</style>
+
+
+
+<style id="final-layout-fix">
+/* Final layout polish */
+.card, .memo, .hero-inner, .topbar { box-sizing: border-box; }
+.img-shell { width: 100%; overflow: hidden; border-radius: 18px; }
+.img-shell img { display:block; width:100%; height:auto; object-fit:cover; }
+.section .card { overflow:hidden; }
+.section .card > .img-shell + h3 { margin-top: 6px; }
+
+/* Spotlight spacing */
+.section .card .img-shell + h3,
+.section .card .img-shell + .tag { margin-top: 0; }
+
+/* Prevent giant empty gaps caused by hidden placeholders/custom blocks */
+.section .card [style*="display:none"] { max-height:0 !important; min-height:0 !important; padding:0 !important; margin:0 !important; overflow:hidden !important; }
+.section .card div[style*="min-height:260px"][style*="background:"] { display:none !important; }
+
+/* Better responsive spacing */
+@media (min-width: 900px){
+  .wrap { max-width: 1280px; }
+  .section { margin-top: 34px; }
+}
+@media (max-width: 640px){
+  .wrap { padding: 16px 14px 96px !important; }
+  .section { margin-top: 24px !important; }
+  .card { padding: 16px !important; }
+  .topbar { gap: 10px !important; }
+  .topbar > div:last-child { font-size: 13px !important; text-align: right; }
+  .section-title { gap: 10px !important; }
+  .section-title .hint { font-size: 13px !important; max-width: 112px !important; text-align: right; }
+  .btns { flex-wrap: wrap !important; gap: 10px !important; }
+  .btn { width: auto !important; }
+}
+</style>
+
+</head>
 <body>
 <div aria-hidden="true" class="orb"></div>
 <div class="wrap">
@@ -601,17 +648,9 @@ section, .section, .card, .container {
 <section aria-label="Editor memo" class="memo">
 <div class="memo-bar">A note from Andrew</div>
 <div class="memo-body"><p>Pesach is right around the corner — hope everyone is staying cool 🥵 as LA turns up the heat.</p><p>There are some great events coming up over the last two weeks of March, from Shabbat dinners and speaker nights to Passover learning and community gatherings across the city.</p><p>We’re continuing to track events across LA and build tools to make it easier to find the right vibe, region, and holiday happenings as Pesach gets closer.</p><p>In the meantime, here are a few standout events to keep on your radar.</p><div class="sig">— Andrew</div></div>
-</section><section class="section"><div class="section-title"><h2>Featured Event</h2><div class="hint">This week’s standout</div></div><article class="card"><div class="tag">Featured</div><div class="img-shell" style="margin-bottom:14px;">
-<div style="height:100%;min-height:260px;border-radius:18px;background:
-      linear-gradient(135deg, rgba(124,58,237,.14), rgba(56,189,248,.10)),
-      linear-gradient(180deg,#fbf7ff,#fffafc);
-      display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;">
-<div>
-<div style="font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#7c3aed;margin-bottom:10px;">Featured Event</div>
-<div style="font-size:34px;line-height:1.05;font-weight:800;color:#6d28d9;">Rosh Chodesh Nissan</div>
-<div style="font-size:30px;line-height:1.08;font-weight:800;color:#6d28d9;">Women’s Gathering</div>
-<div style="margin-top:12px;font-size:16px;color:#475569;">Sunday, March 22 • 6:00–9:00 PM</div>
-</div>
+</section><section class="section"><div class="section-title"><h2>Featured Event</h2><div class="hint">This week’s standout</div></div><article class="card"><div class="tag">Featured</div>
+<div class="img-shell" style="margin-bottom:14px;"><img src="featured-happy-minyan.jpg" alt="Happy Minyan Rosh Chodesh Nissan Women’s Gathering flyer"/></div><div class="img-shell" style="margin-bottom:14px;">
+
 </div>
 </div><h3>Happy Minyan — Rosh Chodesh Nissan Women’s Gathering</h3><p class="desc">A peaceful women’s evening centered on renewal, reflection, and community — with yoga, meditation, Torah, and a dairy dinner as Nissan begins.</p><ul class="facts"><li>Sunday, March 22</li><li>6:00–9:00 PM</li><li>$26 suggested donation</li><li>Yoga • Meditation • Torah • Dairy Dinner</li></ul><div class="btns"><a class="btn primary" href="https://www.happyminyan.org/event/nissangathering" rel="noopener" target="_blank">RSVP</a><a class="btn ghost" href="https://www.happyminyan.org/event/nissangathering" rel="noopener" target="_blank">Details</a></div></article></section><section class="section"><div class="section-title"><h2>At a Glance</h2><div class="hint">Quick look</div></div><div class="card"><div class="tag">Community Picks</div><h3>A few more standout community happenings this week across LA:</h3><a href="https://partiful.com/e/Q0tS2bWzWhBADkB0mMVc?c=ac0iHtfd" rel="noopener" style="display:block;text-decoration:none;color:inherit;" target="_blank"><div style="padding:16px 18px;margin:14px 0;border:1px solid var(--line);border-radius:999px;background:rgba(37,99,235,.04);font-weight:700;line-height:1.3;">🎶 Blossom Gatherings — Rest &amp; Rhythm Shabbat • March 20</div></a><a href="https://tebh.org/community/yopro/" rel="noopener" style="display:block;text-decoration:none;color:inherit;" target="_blank"><div style="padding:16px 18px;margin:14px 0;border:1px solid var(--line);border-radius:999px;background:rgba(37,99,235,.04);font-weight:700;line-height:1.3;">⛳ Temple Emanuel YoPro — Mini Golf Night • March 25 • 7:00 PM</div></a><a href="mailto:sklein@hamakomla.org" rel="noopener" style="display:block;text-decoration:none;color:inherit;" target="_blank"><div style="padding:16px 18px;margin:14px 0;border:1px solid var(--line);border-radius:999px;background:rgba(37,99,235,.04);font-weight:700;line-height:1.3;">🍻 HaMakom — Chai Sababa: Torah on Tap • March 25 • 5:00–8:00 PM</div></a><a href="https://posh.vip/e/renewal-by-mazal-market" rel="noopener" style="display:block;text-decoration:none;color:inherit;" target="_blank"><div style="padding:16px 18px;margin:14px 0;border:1px solid var(--line);border-radius:999px;background:rgba(37,99,235,.04);font-weight:700;line-height:1.3;">🪩 Mazal Market — Renewal • March 22 • 2:00–8:00 PM</div></a><div class="btns"><a class="btn primary" href="https://calendar.google.com/calendar/embed?src=lajevents.inbox%40gmail.com" rel="noopener" target="_blank">Full Calendar</a><a class="btn ghost" href="https://calendar.google.com/calendar/embed?src=lajevents.inbox%40gmail.com" rel="noopener" target="_blank">View Full Calendar</a></div></div></section><section class="section"><div class="section-title"><h2>Community Happenings</h2><div class="hint">3 strong picks</div></div><div class="grid cols-2"><article class="card">
 <div class="tag">Happy Hour + Torah</div>
@@ -630,25 +669,37 @@ section, .section, .card, .container {
 <a class="btn primary" href="mailto:sklein@hamakomla.org" rel="noopener" target="_blank">RSVP</a>
 <a class="btn ghost" href="mailto:sklein@hamakomla.org" rel="noopener" target="_blank">Details</a>
 </div>
-</article><article class="card"><div class="tag">Learning + Dinner</div><div class="img-shell" style="margin-bottom:14px;"><img alt="CYP Long Beach flyer" src="community-cyp-long-beach.jpg"/></div><h3>CYP Long Beach — Dinner &amp; Discussion: Passover Unpacked</h3><p class="desc">A relaxed Long Beach dinner focused on Passover, what it means today, and why it still matters — with shawarma and open conversation built in.</p><ul class="facts"><li>Monday, March 23</li><li>7:00 PM</li><li>Long Beach</li><li>RSVP to Rochie: 979-492-6166</li></ul><div class="btns"><span class="btn primary" style="cursor:default;pointer-events:none;opacity:1;">RSVP to Rochie: 979-492-6166</span><a class="btn ghost" href="tel:9794926166" rel="noopener" target="_blank">Details</a></div></article><article class="card"><div class="tag">Dating</div><div class="img-shell" style="margin-bottom:14px;"><img alt="CoronaCrush Speed Dating flyer" src="community-date-night.jpg"/></div><h3>Date Night — Pre-Pesach Speed Dating</h3><p class="desc">A fun, structured online speed dating event bringing together Jewish singles from around the world before Pesach.</p><ul class="facts"><li>Wednesday, March 25</li><li>9 PM ET / 9 PM IL</li><li>Online</li><li>Free with deposit</li></ul><div class="btns"><a class="btn primary" href="https://datenight.ai/LAMatch" rel="noopener" target="_blank">Sign Up</a><a class="btn ghost" href="https://datenight.ai/LAMatch" rel="noopener" target="_blank">Details</a></div></article></div></section><section class="section"><div class="section-title"><h2>More Events</h2><div class="hint">Live community scroll</div></div><div class="card"><div class="elfsight-app-cfab7fc8-bb34-45e0-a094-e14966c3df35" data-elfsight-app-lazy=""></div></div></section><section class="section"><div class="section-title"><h2>Community Spotlight</h2><div class="hint">Mazal Market Spotlight</div></div><article class="card"><div class="tag">Spotlight</div><div class="img-shell" style="margin-bottom:14px;">
-<div style="height:100%;min-height:260px;border-radius:18px;background:
-      linear-gradient(135deg, rgba(245,158,11,.20), rgba(124,58,237,.12)),
-      linear-gradient(180deg,#fffaf4,#fff);
-      display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;">
-<div>
-<div style="font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#b45309;margin-bottom:10px;">Community Spotlight</div>
-<div style="font-size:38px;line-height:1.02;font-weight:800;color:#111827;">Renewal</div>
-<div style="font-size:20px;line-height:1.2;font-weight:700;color:#92400e;">Mazal Market • March 22</div>
-</div>
-</div>
-</div><h3>Mazal Market — Renewal</h3><p class="desc">Mazal Market is back in Hollywood with Renewal, a 21+ pre-Passover day party in collaboration with Tripical Production. Expect DJs, dancing, kosher Israeli food, vendors, a full bar, and strong networking energy — with proceeds supporting A Future for the Survivors and the Wounded and security by Magen Am.</p><ul class="facts"><li>Sunday, March 22</li><li>2:00–8:00 PM</li><li>Hollywood / private venue TBA</li><li>21+ • I.D. required</li></ul><div class="btns"><a class="btn primary" href="https://posh.vip/e/renewal-by-mazal-market" rel="noopener" target="_blank">Purchase Tickets</a><a class="btn ghost" href="https://posh.vip/e/renewal-by-mazal-market" rel="noopener" target="_blank">Details</a></div></article></section>
+</article><article class="card"><div class="tag">Learning + Dinner</div><div class="img-shell" style="margin-bottom:14px;"><img alt="CYP Long Beach flyer" src="community-cyp-long-beach.jpg"/></div><h3>CYP Long Beach — Dinner &amp; Discussion: Passover Unpacked</h3><p class="desc">A relaxed Long Beach dinner focused on Passover, what it means today, and why it still matters — with shawarma and open conversation built in.</p><ul class="facts"><li>Monday, March 23</li><li>7:00 PM</li><li>Long Beach</li><li>RSVP to Rochie: 979-492-6166</li></ul><div class="btns"><span class="btn primary" style="cursor:default;pointer-events:none;opacity:1;">RSVP to Rochie: 979-492-6166</span><a class="btn ghost" href="tel:9794926166" rel="noopener" target="_blank">Details</a></div></article><article class="card"><div class="tag">Dating</div><div class="img-shell" style="margin-bottom:14px;"><img alt="CoronaCrush Speed Dating flyer" src="community-date-night.jpg"/></div><h3>Date Night — Pre-Pesach Speed Dating</h3><p class="desc">A fun, structured online speed dating event bringing together Jewish singles from around the world before Pesach.</p><ul class="facts"><li>Wednesday, March 25</li><li>9 PM ET / 9 PM IL</li><li>Online</li><li>Free with deposit</li></ul><div class="btns"><a class="btn primary" href="https://datenight.ai/LAMatch" rel="noopener" target="_blank">Sign Up</a><a class="btn ghost" href="https://datenight.ai/LAMatch" rel="noopener" target="_blank">Details</a></div></article></div></section><section class="section"><div class="section-title"><h2>More Events</h2><div class="hint">Live community scroll</div></div><div class="card" style="padding:16px 16px 14px;"><div class="elfsight-app-cfab7fc8-bb34-45e0-a094-e14966c3df35" data-elfsight-app-lazy=""></div></div></section>
+<section class="section">
+  <div class="section-title">
+    <h2>Community Spotlight</h2>
+    <div class="hint">Mazal Market Spotlight</div>
+  </div>
+  <article class="card">
+    <div class="tag">Spotlight</div>
+    <div class="img-shell" style="margin-bottom:14px;"><img src="mazal-market-renewal.jpg" alt="Mazal Market Renewal flyer"/></div>
+    <h3>Mazal Market — Renewal</h3>
+    <p class="desc">Mazal Market is back in Hollywood with Renewal, a 21+ pre-Passover day party in collaboration with Tripical Production. Expect DJs, dancing, kosher Israeli food, vendors, a full bar, and strong networking energy — with proceeds supporting A Future for the Survivors and the Wounded and security by Magen Am.</p>
+    <ul class="facts">
+      <li>Sunday, March 22</li>
+      <li>2:00–8:00 PM</li>
+      <li>Hollywood / private venue TBA</li>
+      <li>21+ • I.D. required</li>
+    </ul>
+    <div class="btns">
+      <a class="btn primary" href="https://posh.vip/e/renewal-by-mazal-market" target="_blank" rel="noopener">Purchase Tickets</a>
+      <a class="btn ghost" href="https://posh.vip/e/renewal-by-mazal-market" target="_blank" rel="noopener">Details</a>
+    </div>
+  </article>
+</section>
+
 <section class="section">
 <div class="section-title">
 <h2>LAJE x Birthright</h2>
 <div class="hint">Interest intake</div>
 </div>
 <div class="callout">
-<h3><img src="featured-happy-minyan.jpg" style="width:100%; border-radius:18px; margin-bottom:18px; object-fit:cover;"/>
+<h3><img src="birthright.jpg" style="width:100%; border-radius:18px; margin-bottom:18px; object-fit:cover;"/>
 Birthright interest — Summer</h3>
 <p>
           We are currently coordinating interest for <strong>22–26 year olds</strong> who did not previously go on Birthright to travel to Israel this summer.
@@ -659,6 +710,7 @@ Birthright interest — Summer</h3>
 </div>
 </div>
 </section>
+<div class="img-shell" style="margin-bottom:14px;"><img src="birthright.jpg" alt="LAJE x Birthright"/></div>
 <section class="section">
 <div class="section-title">
 <h2>Stay Connected</h2>
